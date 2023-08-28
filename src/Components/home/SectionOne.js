@@ -14,9 +14,12 @@ import { Link } from "react-router-dom"
 import { BsSearch, BsCircleFill } from "react-icons/bs"
 import { globalStyle } from "../../styles/globalStyle"
 import SlideOne from "./slideOne/SlideOne"
+import { useSelector } from "react-redux"
 
 function SectionOne() {
-  
+  const auth = useSelector((state) => state.auth)
+  console.log("auth: ", auth)
+  // console.log('Hi Carlo')
   return (
     <Flex sx={pageContainerStyle.container}>
       <Flex flexDirection={"row"} w={"100%"}>
@@ -27,11 +30,16 @@ function SectionOne() {
           minH={"550px"}
         >
           <SlideOne />
-          <Flex gap={4} position={'absolute'} left={'calc(50% - 45px)'} bottom={0}>
-            <Icon as={BsCircleFill} boxSize={3} color={'gray.400'} />
-            <Icon as={BsCircleFill} boxSize={3} color={'gray.400'} />
-            <Icon as={BsCircleFill} boxSize={3} color={'gray.400'} />
-            <Icon as={BsCircleFill} boxSize={3} color={'gray.400'} />
+          <Flex
+            gap={4}
+            position={"absolute"}
+            left={"calc(50% - 45px)"}
+            bottom={0}
+          >
+            <Icon as={BsCircleFill} boxSize={3} color={"gray.400"} />
+            <Icon as={BsCircleFill} boxSize={3} color={"gray.400"} />
+            <Icon as={BsCircleFill} boxSize={3} color={"gray.400"} />
+            <Icon as={BsCircleFill} boxSize={3} color={"gray.400"} />
           </Flex>
         </Flex>
         <Flex
