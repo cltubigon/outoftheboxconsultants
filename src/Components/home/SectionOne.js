@@ -91,7 +91,7 @@ function SectionOne() {
             </Link>
             <Link to={"/"}>
               <Text bgColor={"#DAD9D7"} borderRadius={"md"} p={"3px 15px"}>
-                Website
+                Websites
               </Text>
             </Link>
             <Link to={"/"}>
