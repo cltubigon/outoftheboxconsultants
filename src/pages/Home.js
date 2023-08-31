@@ -3,12 +3,16 @@ import {
 } from "@chakra-ui/react"
 import React from "react"
 import { pageContainerStyle } from "../styles/pageContainerStyle"
-import SectionOne from "../Components/home/SectionOne"
+import HomeSectionOne from "../Components/home/HomeSectionOne"
+import HomeSectionTwo from "../Components/home/HomeSectionTwo"
 
 function Home() {
   return (
     <Flex sx={pageContainerStyle.container}>
-      <SectionOne />
+      <Flex flexDirection={'column'} overflowX={'hidden'}>
+        <HomeSectionOne />
+        <HomeSectionTwo />
+      </Flex>
     </Flex>
   )
 }
