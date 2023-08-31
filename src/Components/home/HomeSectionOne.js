@@ -52,7 +52,7 @@ function SectionOne() {
             pr={{ base: 0, lg: "20px" }}
             lineHeight={"1.05em"}
           >
-            Grow with great designss
+            Grow with great design
           </Heading>
           <Text pl={{ base: "0", lg: "30px" }} pr={{ base: "0", lg: "50px" }}>
             No matter what your business needs, we can connect you with a
