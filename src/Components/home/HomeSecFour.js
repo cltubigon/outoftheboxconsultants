@@ -21,9 +21,24 @@ const HomeSecFour = () => {
     setBtnHovered(() => !btnHovered)
   }
   return (
-    <Flex py={"80px"}>
-      <Flex w={"50%"}>
-        <Flex maxW={"540px"} gap={1} pl={{ base: 0, md: "28px" }}>
+    <Flex
+      pt={{ base: "10px", md: "30px" }}
+      pb={{ base: "49px", md: "63px" }}
+      flexDirection={{ base: "column-reverse", lg: "row" }}
+      maxW={"1300px"}
+      px={{ ph: "10px", tl: "40px", lt: "50px", dt: '0px' }}
+    >
+      <Flex
+        w={{ base: "100%", lg: "50%" }}
+        mt={{ base: "16px", md: "0" }}
+        justifyContent={{ base: "center", lg: "flex-start" }}
+      >
+        <Flex
+          maxW={"540px"}
+          gap={1}
+          pl={{ base: "34px", md: "28px" }}
+          pr={{ base: "34px", md: "0" }}
+        >
           <Flex flexDirection={"column"} pt={"45px"}>
             <Flex flexDirection={"column"} alignItems={"center"} zIndex={"1"}>
               <Flex justifyContent={"center"}>
@@ -100,7 +115,11 @@ const HomeSecFour = () => {
             </Text>
           </Flex>
 
-          <Flex flexDirection={"column"} pt={"45px"}>
+          <Flex
+            flexDirection={"column"}
+            display={{ base: "none", md: "flex" }}
+            pt={"25px"}
+          >
             <Flex flexDirection={"column"} alignItems={"center"} zIndex={"1"}>
               <Flex justifyContent={"center"}>
                 <Icon as={FaStar} color={"#FE5F50"} boxSize={5} mt={"28px"} />
@@ -141,7 +160,7 @@ const HomeSecFour = () => {
       </Flex>
 
       <Flex
-        w={"50%"}
+        w={{ base: "100%", lg: "50%" }}
         px={"5%"}
         flexDirection={"column"}
         gap={"28px"}
@@ -150,13 +169,15 @@ const HomeSecFour = () => {
         <Heading
           as={"h2"}
           color={"#FE5F50"}
-          fontSize={"xxx-large"}
+          fontSize={{ base: "42px", md: "xxx-large" }}
+          lineHeight={{ base: "1em", md: "1.3em" }}
+          letterSpacing={{ base: "tight", md: "normal" }}
           fontWeight={"medium"}
         >
           Work with creative experts you can trust
         </Heading>
-        <Box bgColor={"#FE5F50"} h={"5px"} w={"39px"} />
-        <Text pl={{ base: 0, md: "28px" }} pr={{ base: 0, md: "40px" }}>
+        <Box bgColor={"#FE5F50"} h={"4px"} w={"39px"} />
+        <Text pl={"28px"} pr={{ base: 0, md: "40px" }}>
           Logos, websites, packaging design and more. Our trusted designer
           community has helped thousands of businesses launch, grow, expand and
           rebrand with custom, professional design.
@@ -164,13 +185,13 @@ const HomeSecFour = () => {
         <Flex
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
-          ml={{ base: 0, md: "28px" }}
+          ml={"28px"}
           alignItems={"center"}
           borderBottom={btnHovered ? "2px solid #ccc" : "2px solid transparent"}
           w={"fit-content"}
           transition={"all 0.3s"}
         >
-          <Link to={'/'}>
+          <Link to={"/"}>
             <Flex>
               <Text fontSize={"xl"} fontWeight={"semibold"}>
                 Browse designer portfolios

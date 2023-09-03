@@ -14,14 +14,19 @@ import { globalStyle } from "../../styles/globalStyle"
 import FadeSlider from "../Sliders/FadeSlider"
 import { useSelector } from "react-redux"
 
-function SectionOne() {
+function HomeSecOne() {
   const activeColor = useSelector((state) => state.homepage.activeColor)
   const slideImageHeight = useSelector(
     (state) => state.homepage.slideImageHeight
   )
 
   return (
-    <Flex>
+    <Flex
+      maxW={"1300px"}
+      pt={"60px"}
+      pb={{ base: "68px", md: "94px" }}
+      px={{ ph: "10px", tl: "40px", lt: "50px", dt: '0px' }}
+    >
       <Flex
         flexDirection={{
           base: "column-reverse",
@@ -30,9 +35,12 @@ function SectionOne() {
         }}
         justifyContent={""}
         w={"100%"}
-        py={'60px'}
       >
-        <Flex w={{ base: "100%", lg: "50%" }} justifyContent={'flex-end'}>
+        <Flex
+          w={{ base: "100%", lg: "50%" }}
+          mt={{ base: "42px", lg: 0 }}
+          justifyContent={"flex-end"}
+        >
           <FadeSlider />
         </Flex>
         <Flex
@@ -41,7 +49,7 @@ function SectionOne() {
           gap={6}
           w={{ base: "100%", lg: "50%" }}
           pl={{ base: "0", md: "30px", lg: "70px" }}
-          h={{base: 'auto', lg: slideImageHeight + 'px' }}
+          h={{ base: "auto", lg: slideImageHeight + "px" }}
         >
           <Heading
             as={"h1"}
@@ -125,4 +133,4 @@ function SectionOne() {
   )
 }
 
-export default SectionOne
+export default HomeSecOne

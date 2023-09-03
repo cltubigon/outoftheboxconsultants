@@ -34,113 +34,151 @@ const HomeSecFive = () => {
     setIsHovered(null)
   }
   return (
-    <Flex flexDirection={"column"} gap={6} w={"100%"} py={"90px"} bgColor={'#F3F2F0'}>
-      <Flex alignItems={"center"} justifyContent={"space-between"} w={"100%"}>
-        <Flex flexDirection={"column"} gap={2}>
-          <Text
-            borderRadius={"20px"}
-            bgColor={"#E88954"}
-            py={"5px"}
-            px={"12px"}
-            w={"fit-content"}
-            fontSize={"sm"}
-            color={"#fff"}
-            mb={"8px"}
-          >
-            New
-          </Text>
-          <Flex alignItems={"center"} gap={2}>
+    <Flex bgColor={"#F3F2F0"} w={"100%"} py={"60px"}>
+      <Flex
+        flexDirection={"column"}
+        gap={6}
+        w={"100%"}
+        mx={"auto"}
+        maxW={"1300px"}
+        px={{ ph: "10px", tl: "40px", lt: "50px", dt: '0px' }}
+      >
+        <Flex
+          alignItems={"center"}
+          flexDirection={{ base: "column", lg: "row" }}
+          justifyContent={"space-between"}
+          w={"100%"}
+        >
+          <Flex flexDirection={"column"} gap={2} pl={{ base: 0, md: "30px" }}>
+            <Text
+              borderRadius={"20px"}
+              bgColor={"#E88954"}
+              py={"5px"}
+              px={"12px"}
+              w={"fit-content"}
+              fontSize={"sm"}
+              color={"#fff"}
+              mb={"8px"}
+            >
+              New
+            </Text>
+            <Flex
+              alignItems={{ base: "flex-start", md: "center" }}
+              flexDirection={{ base: "column", md: "row" }}
+              gap={2}
+            >
+              <Heading
+                as={"h3"}
+                fontWeight={"semibold"}
+                fontSize={{ base: "20px", md: "x-large" }}
+                color={"#313030"}
+                letterSpacing={{ base: "tight", md: "normal" }}
+              >
+                Design with 99designs, print with
+              </Heading>
+              <Image
+                src="/images/homepage/vistaprint-logo-e8f9c7f535.webp"
+                loading="lazy"
+                maxH={"24px"}
+              />
+            </Flex>
             <Heading
-              as={"h3"}
+              as={"h2"}
               fontWeight={"semibold"}
-              fontSize={{ base: "24px", md: "x-large" }}
+              fontSize={{ base: "xx-large", md: "xx-large" }}
+              letterSpacing={{ base: "tight", md: "normal" }}
               color={"#313030"}
             >
-              Design with 99designs, print with
+              Printing your custom design is easier than ever
             </Heading>
-            <Image
-              src="/images/homepage/vistaprint-logo-e8f9c7f535.webp"
-              loading="lazy"
-              maxH={"24px"}
+            <Box
+              bgColor={"#313030"}
+              h={"4px"}
+              w={"39px"}
+              mt={"17px"}
+              mb={"25px"}
             />
+            <Text pr={{ base: 0, md: "120px" }}>
+              The fastest, easiest way to get your custom design and share it
+              with the world. When you work closely with a professional
+              designer, it takes just one click to send completed files to
+              VistaPrint.
+            </Text>
           </Flex>
-          <Heading
-            as={"h2"}
-            fontWeight={"semibold"}
-            fontSize={{ base: "24px", md: "xx-large" }}
-            color={"#313030"}
+          <Flex
+            alignItems={"flex-end"}
+            justifyContent={"flex-end"}
+            display={{ base: "none", lg: "flex" }}
+            minW={"345px"}
           >
-            Printing your custom design is easier than ever
-          </Heading>
-          <Box
-            bgColor={"#313030"}
-            h={"4px"}
-            w={"39px"}
-            mt={"17px"}
-            mb={"25px"}
-          />
-          <Text pr={{ base: 0, md: "120px" }}>
-            The fastest, easiest way to get your custom design and share it with
-            the world. When you work closely with a professional designer, it
-            takes just one click to send completed files to VistaPrint.
-          </Text>
+            <Text fontSize={"xl"} fontWeight={"semibold"}>
+              View all design categories
+            </Text>
+            <Icon as={BsArrowRightShort} boxSize={8} />
+          </Flex>
+        </Flex>
+
+        <Flex
+          mt={"20px"}
+          overflowX={"scroll"}
+          scrollSnapType="x mandatory"
+          sx={{
+            "&::-webkit-scrollbar": {
+              display: "none",
+            },
+          }}
+        >
+          <Flex gap={5}>
+            {featuredList.map((featuredItem, index) => {
+              return (
+                <Flex
+                  key={index}
+                  flexDirection={"column"}
+                  onMouseEnter={() => handleHover(index)}
+                  onMouseLeave={() => handleHoverLeave()}
+                  borderRadius={"md"}
+                  overflow={"hidden"}
+                  boxShadow={index === isHovered && "xl"}
+                  transition={"all 0.5s"}
+                  minW={"232px"}
+                  mb={"30px"}
+                >
+                  <Flex overflow={"hidden"}>
+                    <Image
+                      src={featuredItem.imageURL}
+                      transition={"transform 0.5s"}
+                      transform={index === isHovered && "scale(1.1)"}
+                      loading="'lazy"
+                    />
+                  </Flex>
+                  <Flex
+                    justifyContent={"space-between"}
+                    p={"20px"}
+                    bgColor={"white"}
+                  >
+                    <Text>{featuredItem.title}</Text>
+                    {index === isHovered && (
+                      <Flex transition={"all 5.5s"}>
+                        <Icon as={BsArrowRightShort} boxSize={6} />
+                      </Flex>
+                    )}
+                  </Flex>
+                </Flex>
+              )
+            })}
+          </Flex>
         </Flex>
         <Flex
-          alignItems={'flex-end'}
-          justifyContent={"flex-end"}
-          display={{ base: "none", md: "flex" }}
+          alignItems={"flex-end"}
+          mt={"-10px"}
+          justifyContent={"center"}
+          display={{ base: "flex", lg: "none" }}
           minW={"345px"}
         >
           <Text fontSize={"xl"} fontWeight={"semibold"}>
             View all design categories
           </Text>
           <Icon as={BsArrowRightShort} boxSize={8} />
-        </Flex>
-      </Flex>
-
-      <Flex
-        mt={"20px"}
-        overflowX={"scroll"}
-        scrollSnapType="x mandatory"
-        sx={{
-          "&::-webkit-scrollbar": {
-            display: "none",
-          },
-        }}
-      >
-        <Flex gap={5}>
-          {featuredList.map((featuredItem, index) => {
-            return (
-              <Flex
-                key={index}
-                flexDirection={"column"}
-                onMouseEnter={() => handleHover(index)}
-                onMouseLeave={() => handleHoverLeave()}
-                borderRadius={"md"}
-                overflow={"hidden"}
-                boxShadow={index === isHovered && "xl"}
-                transition={"all 0.5s"}
-                minW={"232px"}
-                mb={'20px'}
-              >
-                <Flex overflow={"hidden"}>
-                  <Image
-                    src={featuredItem.imageURL}
-                    transition={"transform 0.5s"}
-                    transform={index === isHovered && "scale(1.1)"}
-                  />
-                </Flex>
-                <Flex justifyContent={"space-between"} p={"20px"}>
-                  <Text>{featuredItem.title}</Text>
-                  {index === isHovered && (
-                    <Flex transition={"all 5.5s"}>
-                      <Icon as={BsArrowRightShort} boxSize={6} />
-                    </Flex>
-                  )}
-                </Flex>
-              </Flex>
-            )
-          })}
         </Flex>
       </Flex>
     </Flex>

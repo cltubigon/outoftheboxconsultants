@@ -13,6 +13,7 @@ import { rrfConfig } from "./config/fbConfig"
 import { Provider } from "react-redux"
 import { ReactReduxFirebaseProvider } from "react-redux-firebase"
 import { PersistGate } from "redux-persist/integration/react"
+import customTheme from "./config/theme"
 
 const rrfProps = {
   firebase,
@@ -26,7 +27,7 @@ const root = ReactDOM.createRoot(document.getElementById("root"))
 root.render(
   <React.StrictMode>
     <Provider store={guestPersistedStore}>
-      <ChakraProvider>
+      <ChakraProvider theme={customTheme}>
         <ReactReduxFirebaseProvider {...rrfProps}>
           <PersistGate
             loading={<div>Loading...</div>}

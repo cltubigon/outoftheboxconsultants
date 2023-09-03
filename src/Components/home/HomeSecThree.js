@@ -65,23 +65,31 @@ const HomeSecThree = () => {
     setBtnHovered(() => !btnHovered)
   }
   return (
-    <Flex flexDirection={"row"}>
+    <Flex
+      maxW={"1300px"}
+      flexDirection={{ base: "column", lg: "row" }}
+      pt={{ base: "28px", md: "58px" }}
+      pb={"30px"}
+      px={{ ph: "10px", tl: "40px", lt: "50px", dt: '0px' }}
+    >
       <Flex
         flexDirection={"column"}
         justifyContent={"center"}
         gap={"28px"}
-        w={"40%"}
+        w={{ base: "100%", lg: "40%" }}
       >
         <Heading
           as={"h2"}
           color={"#2486CB"}
-          fontSize={"xxx-large"}
+          fontSize={{ base: "44px", md: "xxx-large" }}
+          lineHeight={{ base: "1em", md: "1.3em" }}
+          letterSpacing={{ base: "tight", md: "normal" }}
           fontWeight={"medium"}
         >
           Your business deserves great design
         </Heading>
         <Box bgColor={"#2486CB"} h={"5px"} w={"39px"} />
-        <Text pl={{ base: 0, md: "28px" }} pr={{ base: 0, md: "40px" }}>
+        <Text pl={"28px"} pr={{ base: 0, md: "40px" }}>
           Logos, websites, packaging design and more. Our trusted designer
           community has helped thousands of businesses launch, grow, expand and
           rebrand with custom, professional design.
@@ -89,13 +97,13 @@ const HomeSecThree = () => {
         <Flex
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
-          ml={{ base: 0, md: "28px" }}
+          ml={"28px"}
           alignItems={"center"}
           borderBottom={btnHovered ? "2px solid #ccc" : "2px solid transparent"}
           w={"fit-content"}
           transition={"all 0.3s"}
         >
-          <Link to={'/'}>
+          <Link to={"/"}>
             <Flex>
               <Text fontSize={"xl"} fontWeight={"semibold"}>
                 Start your brand
@@ -106,7 +114,7 @@ const HomeSecThree = () => {
         </Flex>
       </Flex>
 
-      <Flex w={"60%"} position={"relative"}>
+      <Flex w={{ base: "100%", lg: "60%" }} position={"relative"}>
         <Image
           src="/images/homepage/business-deserves-great-design.webp"
           loading="lazy"
@@ -122,7 +130,7 @@ const HomeSecThree = () => {
             alignItems={"center"}
             position={"absolute"}
             top={"20px"}
-            left={{ base: 0, lg: "50%" }}
+            left={{ base: "50%", lg: "50%" }}
           >
             <Image
               src="/images/Homepage/avatar-dunychi.webp"
@@ -145,7 +153,7 @@ const HomeSecThree = () => {
             alignItems={"center"}
             position={"absolute"}
             top={"50%"}
-            left={"0"}
+            left={{ base: "-25%", md: "0" }}
           >
             <Image
               src="/images/Homepage/avatar-setupshop.webp"
@@ -173,7 +181,7 @@ const HomeSecThree = () => {
             alignItems={"center"}
             position={"absolute"}
             bottom={"15%"}
-            right={"0"}
+            right={{ base: "-10%", md: "0" }}
           >
             <Image
               src="/images/Homepage/avatar-setupshop.webp"
