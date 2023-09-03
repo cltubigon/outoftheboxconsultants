@@ -17,13 +17,13 @@ const SlideSix = () => {
         pr={{ ph: "0", tl: "100px", lt: "0" }}
       >
         <Image
-          src="/images/homepage/testimonial-4-photo1-fd80d760b0.webp"
+          src="/images/Homepage/testimonial-4-photo1-fd80d760b0.webp"
           display={{ ph: "none", tl: "block" }}
           zIndex={"1"}
           loading="lazy"
         />
         <Image
-          src="/images/homepage/testimonial-4-photo2-a684fc1c68.webp"
+          src="/images/Homepage/testimonial-4-photo2-a684fc1c68.webp"
           display={{ ph: "none", tl: "block" }}
           zIndex={"1"}
           loading="lazy"
@@ -37,7 +37,7 @@ const SlideSix = () => {
           top={"calc(50% - 180px)"}
         >
           <Image
-            src="/images/homepage/testimonial-4-artwork-3665771dea.webp"
+            src="/images/Homepage/testimonial-4-artwork-3665771dea.webp"
             loading="lazy"
           />
           <Text fontSize={"sm"} color={"gray.800"} fontStyle={"italic"}>
@@ -81,7 +81,7 @@ const SlideSix = () => {
         </Text>
         <Flex gap={4} alignItems={"center"}>
           <Image
-            src="/images/homepage/testimonial-4-profile-photo-aa22c7f058.webp"
+            src="/images/Homepage/testimonial-4-profile-photo-aa22c7f058.webp"
             w={"64px"}
             h={"64px"}
             borderRadius={"64px"}

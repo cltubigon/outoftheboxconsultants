@@ -17,13 +17,13 @@ const SlideEight = () => {
         pr={{ ph: "0", tl: "100px", lt: "0" }}
       >
         <Image
-          src="/images/homepage/testimonial-5-photo1-d11b93aaa0.webp"
+          src="/images/Homepage/testimonial-5-photo1-d11b93aaa0.webp"
           display={{ ph: "none", tl: "block" }}
           zIndex={"1"}
           loading="lazy"
         />
         <Image
-          src="/images/homepage/testimonial-5-photo2-9e0504f672.webp"
+          src="/images/Homepage/testimonial-5-photo2-9e0504f672.webp"
           display={{ ph: "none", tl: "block" }}
           zIndex={"1"}
           loading="lazy"
@@ -38,7 +38,7 @@ const SlideEight = () => {
           alignItems={'flex-end'}
         >
           <Image
-            src="/images/homepage/testimonial-5-artwork-f60357de65.webp"
+            src="/images/Homepage/testimonial-5-artwork-f60357de65.webp"
             loading="lazy"
           />
           <Text fontSize={"sm"} alignSelf={'flex-end'} zIndex={'2'} mr={'140px'} color={"gray.800"} fontStyle={"italic"}>
@@ -81,7 +81,7 @@ const SlideEight = () => {
         </Text>
         <Flex gap={4} alignItems={"center"}>
           <Image
-            src="/images/homepage/testimonial-5-profile-photo-d92cbfc9d5.webp"
+            src="/images/Homepage/testimonial-5-profile-photo-d92cbfc9d5.webp"
             w={"64px"}
             h={"64px"}
             borderRadius={"64px"}

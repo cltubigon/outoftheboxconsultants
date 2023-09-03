@@ -17,13 +17,13 @@ const SlideFour = () => {
         pr={{ ph: "0", tl: "100px", lt: "0" }}
       >
         <Image
-          src="/images/homepage/testimonial-3-photo1-2ad4434a0d.webp"
+          src="/images/Homepage/testimonial-3-photo1-2ad4434a0d.webp"
           display={{ ph: "none", tl: "block" }}
           zIndex={"1"}
           loading="lazy"
         />
         <Image
-          src="/images/homepage/testimonial-3-photo2-4967c72a34.webp"
+          src="/images/Homepage/testimonial-3-photo2-4967c72a34.webp"
           display={{ ph: "none", tl: "block" }}
           zIndex={"1"}
           loading="lazy"
@@ -37,7 +37,7 @@ const SlideFour = () => {
           top={"calc(50% - 180px)"}
         >
           <Image
-            src="/images/homepage/testimonial-3-artwork-7d873dcf47.webp"
+            src="/images/Homepage/testimonial-3-artwork-7d873dcf47.webp"
             loading="lazy"
           />
           <Text fontSize={"sm"} color={"gray.800"} fontStyle={'italic'}>
@@ -82,7 +82,7 @@ const SlideFour = () => {
         </Text>
         <Flex gap={4} alignItems={"center"}>
           <Image
-            src="/images/homepage/testimonial-3-profile-photo-fe60d031d8.webp"
+            src="/images/Homepage/testimonial-3-profile-photo-fe60d031d8.webp"
             w={"64px"}
             h={"64px"}
             borderRadius={"64px"}

@@ -77,7 +77,7 @@ const HomeSecFive = () => {
                 Design with 99designs, print with
               </Heading>
               <Image
-                src="/images/homepage/vistaprint-logo-e8f9c7f535.webp"
+                src="/images/Homepage/vistaprint-logo-e8f9c7f535.webp"
                 loading="lazy"
                 maxH={"24px"}
               />

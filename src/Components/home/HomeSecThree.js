@@ -116,7 +116,7 @@ const HomeSecThree = () => {
 
       <Flex w={{ base: "100%", lg: "60%" }} position={"relative"}>
         <Image
-          src="/images/homepage/business-deserves-great-design.webp"
+          src="/images/Homepage/business-deserves-great-design.webp"
           loading="lazy"
         />
 

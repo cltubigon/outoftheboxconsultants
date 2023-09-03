@@ -17,13 +17,13 @@ const SlideOne = () => {
         pr={{ ph: "0", tl: "100px", lt: "0" }}
       >
         <Image
-          src="/images/homepage/testimonial-2-photo1-55ddf54556.webp"
+          src="/images/Homepage/testimonial-2-photo1-55ddf54556.webp"
           display={{ ph: "none", tl: "block" }}
           zIndex={"1"}
           loading="lazy"
         />
         <Image
-          src="/images/homepage/testimonial-2-photo2-1ffa76c851.webp"
+          src="/images/Homepage/testimonial-2-photo2-1ffa76c851.webp"
           display={{ ph: "none", tl: "block" }}
           zIndex={"1"}
           loading="lazy"
@@ -37,7 +37,7 @@ const SlideOne = () => {
           top={"calc(50% - 228px)"}
         >
           <Image
-            src="/images/homepage/testimonial-2-artwork-52e73ff85c.webp"
+            src="/images/Homepage/testimonial-2-artwork-52e73ff85c.webp"
             loading="lazy"
           />
           <Text
@@ -85,7 +85,7 @@ const SlideOne = () => {
         </Text>
         <Flex gap={4} alignItems={"center"}>
           <Image
-            src="/images/homepage/testimonial-2-profile-photo-d1312db6c5.webp"
+            src="/images/Homepage/testimonial-2-profile-photo-d1312db6c5.webp"
             w={"64px"}
             h={"64px"}
             borderRadius={"64px"}
