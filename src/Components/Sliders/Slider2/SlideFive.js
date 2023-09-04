@@ -37,6 +37,7 @@ const SlideFive = () => {
       animate={slideTwoEvent === "next" ? "slideLeft" : "slideRight"}
       w={"100%"}
       gap={10}
+      px={'30px'}
     >
       <Flex
         w={"100%"}
@@ -65,6 +66,7 @@ const SlideFive = () => {
           letterSpacing={"tight"}
           color={"#ED6800"}
           fontWeight={"semibold"}
+          textAlign={'center'}
         >
           192 countries
         </Heading>

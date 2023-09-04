@@ -37,6 +37,7 @@ const SlideSeven = () => {
       animate={slideTwoEvent === "next" ? "slideLeft" : "slideRight"}
       w={"100%"}
       gap={10}
+      px={'30px'}
     >
       <Flex
         w={"100%"}
@@ -64,6 +65,7 @@ const SlideSeven = () => {
           letterSpacing={"tight"}
           color={"#CA0000"}
           fontWeight={"semibold"}
+          textAlign={'center'}
         >
           11,625 talking design
         </Heading>

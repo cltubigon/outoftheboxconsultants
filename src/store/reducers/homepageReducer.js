@@ -4,10 +4,16 @@ const initialState = {
   activeSlideTwo: 1,
   slideTwoEvent: null,
   slideImageHeight: null,
+  totalDesigns: 97339806,
 }
 
 const homepageReducer = (state = initialState, action) => {
   switch (action.type) {
+    case "SET_TOTAL_DESIGNS":
+      return {
+        ...state,
+        totalDesigns: action.payload,
+      }
     case "SET_SLIDE_TWO_EVENT":
       return {
         ...state,

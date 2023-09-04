@@ -1,3 +1,8 @@
+export const SET_TOTAL_DESIGNS = (payload) => {
+  return (dispatch) => {
+    dispatch({ type: "SET_TOTAL_DESIGNS", payload })
+  }
+}
 export const SET_ACTIVE_SLIDE = (slideNumber) => {
   const getActiveColor = () => {
     if (slideNumber === 1) return "#834692"
@@ -14,6 +19,7 @@ export const SET_ACTIVE_SLIDE = (slideNumber) => {
     dispatch({ type: "SET_ACTIVE_SLIDE", payload })
   }
 }
+
 export const SET_SLIDE_IMAGE_HEIGHT = (payload) => {
   return (dispatch) => {
     dispatch({ type: "SET_SLIDE_IMAGE_HEIGHT", payload })

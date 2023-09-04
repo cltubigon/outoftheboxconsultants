@@ -73,7 +73,7 @@ const SlideOne = () => {
             fontSize={"sm"}
             color={"gray.500"}
             fontStyle={"italic"}
-            mt={"-60px"}
+            mt={{ ph: '-20px', tl: "-60px" }}
           >
             by betiobca
           </Text>

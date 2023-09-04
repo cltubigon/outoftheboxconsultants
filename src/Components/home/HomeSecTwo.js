@@ -1,9 +1,10 @@
 import { Flex, Heading, Icon, Image, Text } from "@chakra-ui/react"
 import React, { useState } from "react"
 import { BsArrowRightShort } from "react-icons/bs"
+import { Link } from "react-router-dom"
 
 const HomeSecTwo = () => {
-  console.log('HomeSecTwo')
+  console.log("HomeSecTwo")
   const featuredList = [
     {
       imageURL: "/images/Homepage/logo-identity.webp",
@@ -28,11 +29,20 @@ const HomeSecTwo = () => {
   ]
 
   const [isHovered, setIsHovered] = useState(null)
+  const [btnHovered, setBtnHovered] = useState(false)
+
   const handleHover = (index) => {
     setIsHovered(index)
   }
   const handleHoverLeave = () => {
     setIsHovered(null)
+  }
+
+  const handleMouseEnter = () => {
+    setBtnHovered(() => !btnHovered)
+  }
+  const handleMouseLeave = () => {
+    setBtnHovered(() => !btnHovered)
   }
   return (
     <Flex
@@ -59,11 +69,26 @@ const HomeSecTwo = () => {
               Design for what you need
             </Heading>
           </Flex>
-          <Flex alignItems={"center"} display={{ base: "none", md: "flex" }}>
-            <Text fontSize={"xl"} fontWeight={"semibold"}>
-              View all design categories
-            </Text>
-            <Icon as={BsArrowRightShort} boxSize={8} />
+          <Flex
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+            display={{ ph: 'none', lt: 'flex' }}
+            ml={"28px"}
+            alignItems={"center"}
+            borderBottom={
+              btnHovered ? "2px solid #ccc" : "2px solid transparent"
+            }
+            w={"fit-content"}
+            transition={"all 0.3s"}
+          >
+            <Link to={"/"}>
+              <Flex>
+                <Text fontSize={"xl"} fontWeight={"semibold"}>
+                  View all design categories
+                </Text>
+                <Icon as={BsArrowRightShort} boxSize={8} />
+              </Flex>
+            </Link>
           </Flex>
         </Flex>
 

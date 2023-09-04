@@ -1,11 +1,30 @@
 import { Flex, Heading, Icon, Image, Text } from "@chakra-ui/react"
 import { motion } from "framer-motion"
+import { useEffect } from "react"
 import { CgQuote } from "react-icons/cg"
-import { useSelector } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
+import { SET_TOTAL_DESIGNS } from "../../../store/actions/homepageActions"
 
 const SlideTwo = () => {
-  const activeSlideTwo = useSelector((state) => state.homepage.activeSlideTwo)
+  const dispatch = useDispatch()
+  const state = useSelector(state => state.homepage)
+  // console.log('state: ', state)
+  const totalDesigns = useSelector((state) => state.homepage.totalDesigns)
   const slideTwoEvent = useSelector((state) => state.homepage.slideTwoEvent)
+
+  console.log('totalDesigns: ', totalDesigns)
+
+  useEffect(()=> {
+    const intervalID = setInterval(()=> {
+      const newTotal = totalDesigns + 1
+      console.log('newTotal: ', newTotal)
+      dispatch(SET_TOTAL_DESIGNS(newTotal))
+    }, 2500)
+
+    return () => {
+      clearInterval(intervalID)
+    }
+  }, [totalDesigns])
 
   const animation = {
     initialOfSlideLeft: {
@@ -37,6 +56,7 @@ const SlideTwo = () => {
       animate={slideTwoEvent === "next" ? "slideLeft" : "slideRight"}
       w={"100%"}
       gap={10}
+      px={'30px'}
     >
       <Flex
         w={"100%"}
@@ -63,8 +83,9 @@ const SlideTwo = () => {
           letterSpacing={"tight"}
           color={"#ED6800"}
           fontWeight={"semibold"}
+          textAlign={'center'}
         >
-          97,339,806 designs
+          {totalDesigns.toLocaleString()} designs
         </Heading>
       </Flex>
     </Flex>

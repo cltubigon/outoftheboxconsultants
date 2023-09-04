@@ -1,4 +1,4 @@
-import { Flex } from "@chakra-ui/react"
+import { Box, Flex, Icon, Text } from "@chakra-ui/react"
 import React, { useRef, useState } from "react"
 import SlideOne from "../Sliders/Slider2/SlideOne"
 import SlideFour from "../Sliders/Slider2/SlideFour"
@@ -15,28 +15,40 @@ import {
   SET_ACTIVE_SLIDE_TWO,
   SET_SLIDE_TWO_EVENT,
 } from "../../store/actions/homepageActions"
+import { BsArrowRightShort, BsStarFill } from "react-icons/bs"
+import { MdStar, MdStarHalf } from "react-icons/md"
+import { Link } from "react-router-dom"
 
 const HomeSecSix = () => {
   console.log("HomeSecSix")
   const dispatch = useDispatch()
-  const containerRef = useRef(null);
+  const containerRef = useRef(null)
   const activeSlideTwo = useSelector((state) => state.homepage.activeSlideTwo)
 
   const [startX, setStartX] = useState(null)
+  const [startY, setStartY] = useState(null)
+  const [btnHovered, setBtnHovered] = useState(false)
+
+  const handleMouseEnter = () => {
+    setBtnHovered(() => !btnHovered)
+  }
+  const handleMouseLeave = () => {
+    setBtnHovered(() => !btnHovered)
+  }
 
   const handleTouchStart = (e) => {
     setStartX(e.changedTouches[0].clientX)
-    // e.dataTransfer.setDragImage(document.createElement("div"), 0, 0)
-    setStartX(e.touches[0].clientX - containerRef.current.getBoundingClientRect().left);
+    setStartY(e.changedTouches[0].clientY)
   }
   const handleTouchEnd = (e) => {
-    console.log("e: ", e.changedTouches[0].clientX)
     if (startX !== null) {
       const endX = e.changedTouches[0].clientX
+      const endY = e.changedTouches[0].clientY
       const deltaX = endX - startX
-      if (deltaX > 0) {
+      const deltaY = endY - startY
+      if (deltaX > 10 && deltaY > -100 && deltaY < 60) {
         handlePrevious()
-      } else if (deltaX < 0) {
+      } else if (deltaX < -20 && deltaY > -100 && deltaY < 60) {
         handleNext()
       }
     }
@@ -44,17 +56,20 @@ const HomeSecSix = () => {
 
   const handleDragStart = (e) => {
     setStartX(e.clientX)
+    setStartY(e.clientY)
     e.dataTransfer.setDragImage(document.createElement("div"), 0, 0)
   }
 
   const handleDragEnd = (e) => {
     if (startX !== null) {
       const endX = e.clientX
+      const endY = e.clientY
       const deltaX = endX - startX
+      const deltaY = endY - startY
 
-      if (deltaX > 0) {
+      if (deltaX > 10 && deltaY > -100 && deltaY < 80) {
         handlePrevious()
-      } else if (deltaX < 0) {
+      } else if (deltaX < -20 && deltaY > -100 && deltaY < 80) {
         handleNext()
       }
 
@@ -76,40 +91,73 @@ const HomeSecSix = () => {
   }
 
   return (
-    <Flex
-      w={"100%"}
-      flexDirection={"column"}
-      py={"60px"}
-      alignItems={"center"}
-      position={"relative"}
-      draggable="true"
-      ref={containerRef}
-      onDragStart={handleDragStart}
-      onDragEnd={handleDragEnd}
-      onTouchStart={handleTouchStart}
-      onTouchEnd={handleTouchEnd}
-    >
-      <ArrowControl />
+    <Flex w={"100%"} flexDirection={"column"} pb={"60px"} alignItems={"center"}>
       <Flex
-        maxW={"1300px"}
-        px={{ ph: "10px", tl: "40px", lt: "50px", dt: "0px" }}
+        w={"100%"}
         flexDirection={"column"}
+        py={"60px"}
         alignItems={"center"}
-        gap={4}
-        cursor={"grab"}
+        position={"relative"}
+        draggable="true"
+        ref={containerRef}
+        onDragStart={handleDragStart}
+        onDragEnd={handleDragEnd}
+        onTouchStart={handleTouchStart}
+        onTouchEnd={handleTouchEnd}
       >
-        {activeSlideTwo === 1 && <SlideOne />}
-        {activeSlideTwo === 2 && <SlideTwo />}
-        {activeSlideTwo === 3 && <SlideThree />}
-        {activeSlideTwo === 4 && <SlideFour />}
-        {activeSlideTwo === 5 && <SlideFive />}
-        {activeSlideTwo === 6 && <SlideSix />}
-        {activeSlideTwo === 7 && <SlideSeven />}
-        {activeSlideTwo === 8 && <SlideEight />}
+        <ArrowControl />
+        <Flex
+          maxW={"1300px"}
+          px={{ ph: "10px", tl: "40px", lt: "50px", dt: "0px" }}
+          flexDirection={"column"}
+          alignItems={"center"}
+          gap={4}
+          cursor={"grab"}
+        >
+          {activeSlideTwo === 1 && <SlideOne />}
+          {activeSlideTwo === 2 && <SlideTwo />}
+          {activeSlideTwo === 3 && <SlideThree />}
+          {activeSlideTwo === 4 && <SlideFour />}
+          {activeSlideTwo === 5 && <SlideFive />}
+          {activeSlideTwo === 6 && <SlideSix />}
+          {activeSlideTwo === 7 && <SlideSeven />}
+          {activeSlideTwo === 8 && <SlideEight />}
 
-        <Flex zIndex={"10"}>
-          <SlideControl />
+          <Flex zIndex={"10"}>
+            <SlideControl />
+          </Flex>
         </Flex>
+      </Flex>
+      <Flex
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        mt={"-25px"}
+        alignItems={"center"}
+        borderBottom={btnHovered ? "2px solid #ccc" : "2px solid transparent"}
+        w={"fit-content"}
+        transition={"all 0.3s"}
+      >
+        <Link to={"/"}>
+          <Flex>
+            <Text fontSize={"xl"} fontWeight={"semibold"}>
+              Designers, join now
+            </Text>
+            <Icon as={BsArrowRightShort} boxSize={8} />
+          </Flex>
+        </Link>
+      </Flex>
+      <Flex gap={3} mt={{ ph: 6, tl: 14 }}>
+        <Icon as={MdStar} boxSize={9} />
+        <Icon as={MdStar} boxSize={9} />
+        <Icon as={MdStar} boxSize={9} />
+        <Icon as={MdStar} boxSize={9} />
+        <Icon as={MdStarHalf} boxSize={9} />
+      </Flex>
+      <Flex mt={5}>
+        <Text textAlign={"center"}>
+          Folks think we're pretty rad. We're rated 4.8/5 from 37,551 customer
+          reviews.
+        </Text>
       </Flex>
     </Flex>
   )

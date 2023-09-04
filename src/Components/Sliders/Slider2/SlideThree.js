@@ -37,6 +37,7 @@ const SlideThree = () => {
       animate={slideTwoEvent === "next" ? "slideLeft" : "slideRight"}
       w={"100%"}
       gap={10}
+      px={'30px'}
     >
       <Flex
         w={"100%"}
@@ -64,6 +65,7 @@ const SlideThree = () => {
           letterSpacing={"tight"}
           color={"#1C1B1A"}
           fontWeight={"semibold"}
+          textAlign={'center'}
         >
           697,884 connections
         </Heading>
