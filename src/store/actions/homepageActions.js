@@ -20,8 +20,14 @@ export const SET_SLIDE_IMAGE_HEIGHT = (payload) => {
   }
 }
 
+export const SET_SLIDE_TWO_EVENT = (payload) => {
+  return (dispatch) => {
+    dispatch({ type: "SET_SLIDE_TWO_EVENT", payload })
+  }
+}
+
 export const SET_ACTIVE_SLIDE_TWO = (payload) => {
   return (dispatch) => {
-    dispatch({ type: 'SET_ACTIVE_SLIDE_TWO', payload })
+    dispatch({ type: "SET_ACTIVE_SLIDE_TWO", payload })
   }
 }

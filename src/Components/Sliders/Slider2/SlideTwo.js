@@ -1,9 +1,43 @@
 import { Flex, Heading, Icon, Image, Text } from "@chakra-ui/react"
+import { motion } from "framer-motion"
 import { CgQuote } from "react-icons/cg"
+import { useSelector } from "react-redux"
 
 const SlideTwo = () => {
+  const activeSlideTwo = useSelector((state) => state.homepage.activeSlideTwo)
+  const slideTwoEvent = useSelector((state) => state.homepage.slideTwoEvent)
+
+  const animation = {
+    initialOfSlideLeft: {
+      x: "100%",
+    },
+    slideLeft: {
+      x: "0",
+      transition: {
+        duration: 0.3,
+      },
+    },
+    initialOfSlideRight: {
+      x: "-100%",
+    },
+    slideRight: {
+      x: "0",
+      transition: {
+        duration: 0.3,
+      },
+    },
+  }
   return (
-    <Flex w={"100%"} gap={10}>
+    <Flex
+      as={motion.div}
+      variants={animation}
+      initial={
+        slideTwoEvent === "next" ? "initialOfSlideLeft" : "initialOfSlideRight"
+      }
+      animate={slideTwoEvent === "next" ? "slideLeft" : "slideRight"}
+      w={"100%"}
+      gap={10}
+    >
       <Flex
         w={"100%"}
         flexDirection={"column"}
@@ -16,13 +50,17 @@ const SlideTwo = () => {
         minH={{ ph: "408px", tl: "562px" }}
         // bgColor={'blue'}
       >
-        <Text fontSize={{ ph: 'lg', lt: 'xl' }} fontWeight={"semibold"} textAlign={'center'}>
+        <Text
+          fontSize={{ ph: "lg", lt: "xl" }}
+          fontWeight={"semibold"}
+          textAlign={"center"}
+        >
           Get this: A new design is created on 99designs every 2 seconds!
         </Text>
         <Heading
           as={"h2"}
-          fontSize={{ ph: '40px', tl: '68px', lt: "80px", dt: "90px" }}
-          letterSpacing={'tight'}
+          fontSize={{ ph: "40px", tl: "68px", lt: "80px", dt: "90px" }}
+          letterSpacing={"tight"}
           color={"#ED6800"}
           fontWeight={"semibold"}
         >
