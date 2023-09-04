@@ -13,6 +13,7 @@ import { FaStar } from "react-icons/fa"
 import { Link } from "react-router-dom"
 
 const HomeSecFour = () => {
+  console.log('HomeSecFour')
   const [btnHovered, setBtnHovered] = useState(false)
   const handleMouseEnter = () => {
     setBtnHovered(() => !btnHovered)

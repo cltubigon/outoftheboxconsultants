@@ -32,7 +32,6 @@ function FadeSlider() {
       <Flex position={"relative"} flexDirection={"column"} alignItems={'flex-end'}>
         <SliderOne />
       </Flex>
-      {/* <Flex w={}> */}
         <Flex
           gap={4}
           position={"absolute"}
@@ -67,7 +66,6 @@ function FadeSlider() {
             onClick={() => handleSlideClick(4)}
           />
         </Flex>
-      {/* </Flex> */}
     </Flex>
   )
 }

@@ -12,6 +12,7 @@ import { BsArrowRightShort } from "react-icons/bs"
 import { Link } from "react-router-dom"
 
 const HomeSecThree = () => {
+  console.log('HomeSecThree')
   const clickMeThree = {
     _before: {
       content: "''",

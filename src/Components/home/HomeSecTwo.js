@@ -3,6 +3,7 @@ import React, { useState } from "react"
 import { BsArrowRightShort } from "react-icons/bs"
 
 const HomeSecTwo = () => {
+  console.log('HomeSecTwo')
   const featuredList = [
     {
       imageURL: "/images/Homepage/logo-identity.webp",

@@ -3,6 +3,7 @@ import React, { useState } from "react"
 import { BsArrowRightShort } from "react-icons/bs"
 
 const HomeSecFive = () => {
+  console.log('HomeSecFive')
   const featuredList = [
     {
       imageURL: "/images/Homepage/business-card-design-b10a8518d4.webp",

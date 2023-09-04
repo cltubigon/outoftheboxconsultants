@@ -19,13 +19,15 @@ function HomeSecOne() {
   const slideImageHeight = useSelector(
     (state) => state.homepage.slideImageHeight
   )
+  console.log('HomeSecOne')
 
   return (
     <Flex
       maxW={"1300px"}
       pt={"60px"}
       pb={{ base: "68px", md: "94px" }}
-      px={{ ph: "10px", tl: "40px", lt: "50px", dt: '0px' }}
+      px={{ ph: "10px", tl: "40px", lt: "50px", dt: "0px" }}
+      minH={{ ph: '909px', tl: "1019px", lt: "651px", dt: "653px" }}
     >
       <Flex
         flexDirection={{

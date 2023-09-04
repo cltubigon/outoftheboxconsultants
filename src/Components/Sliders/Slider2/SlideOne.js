@@ -20,13 +20,13 @@ const SlideOne = () => {
           src="/images/Homepage/testimonial-2-photo1-55ddf54556.webp"
           display={{ ph: "none", tl: "block" }}
           zIndex={"1"}
-          loading="lazy"
+          // loading="lazy"
         />
         <Image
           src="/images/Homepage/testimonial-2-photo2-1ffa76c851.webp"
           display={{ ph: "none", tl: "block" }}
           zIndex={"1"}
-          loading="lazy"
+          // loading="lazy"
         />
         <Flex
           position={{ ph: "unset", tl: "absolute" }}
@@ -38,7 +38,7 @@ const SlideOne = () => {
         >
           <Image
             src="/images/Homepage/testimonial-2-artwork-52e73ff85c.webp"
-            loading="lazy"
+            // loading="lazy"
           />
           <Text
             fontSize={"sm"}
@@ -59,6 +59,7 @@ const SlideOne = () => {
         pl={{ ph: "70px", lt: "50px" }}
         pr={{ ph: "20px", lt: "10%", dt: "16%" }}
         position={"relative"}
+        minH={{ ph: '408px', tl: '313px', dt: '562px' }}
       >
         <Icon
           as={CgQuote}
@@ -89,7 +90,7 @@ const SlideOne = () => {
             w={"64px"}
             h={"64px"}
             borderRadius={"64px"}
-            loading="lazy"
+            // loading="lazy"
           />
           <Flex flexDirection={"column"}>
             <Text color={"gray.600"} fontSize={"md"} fontStyle={"italic"}>

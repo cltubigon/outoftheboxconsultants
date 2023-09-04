@@ -20,13 +20,13 @@ const SlideSix = () => {
           src="/images/Homepage/testimonial-4-photo1-fd80d760b0.webp"
           display={{ ph: "none", tl: "block" }}
           zIndex={"1"}
-          loading="lazy"
+          // loading="lazy"
         />
         <Image
           src="/images/Homepage/testimonial-4-photo2-a684fc1c68.webp"
           display={{ ph: "none", tl: "block" }}
           zIndex={"1"}
-          loading="lazy"
+          // loading="lazy"
         />
         <Flex
           position={{ ph: "unset", tl: "absolute" }}
@@ -38,7 +38,7 @@ const SlideSix = () => {
         >
           <Image
             src="/images/Homepage/testimonial-4-artwork-3665771dea.webp"
-            loading="lazy"
+            // loading="lazy"
           />
           <Text fontSize={"sm"} color={"gray.800"} fontStyle={"italic"}>
             by Steve Hai
@@ -54,6 +54,7 @@ const SlideSix = () => {
         pl={{ ph: "70px", lt: "50px" }}
         pr={{ ph: "20px", lt: "10%", dt: "16%" }}
         position={"relative"}
+        minH={{ ph: '408px', tl: '313px', dt: '562px' }}
       >
         <Icon
           as={CgQuote}
@@ -85,7 +86,7 @@ const SlideSix = () => {
             w={"64px"}
             h={"64px"}
             borderRadius={"64px"}
-            loading="lazy"
+            // loading="lazy"
           />
           <Flex flexDirection={"column"}>
             <Text color={"gray.600"} fontSize={"md"} fontStyle={"italic"}>

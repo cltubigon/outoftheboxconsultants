@@ -20,13 +20,13 @@ const SlideEight = () => {
           src="/images/Homepage/testimonial-5-photo1-d11b93aaa0.webp"
           display={{ ph: "none", tl: "block" }}
           zIndex={"1"}
-          loading="lazy"
+          // loading="lazy"
         />
         <Image
           src="/images/Homepage/testimonial-5-photo2-9e0504f672.webp"
           display={{ ph: "none", tl: "block" }}
           zIndex={"1"}
-          loading="lazy"
+          // loading="lazy"
         />
         <Flex
           position={{ ph: "unset", tl: "absolute" }}
@@ -39,7 +39,7 @@ const SlideEight = () => {
         >
           <Image
             src="/images/Homepage/testimonial-5-artwork-f60357de65.webp"
-            loading="lazy"
+            // loading="lazy"
           />
           <Text fontSize={"sm"} alignSelf={'flex-end'} zIndex={'2'} mr={'140px'} color={"gray.800"} fontStyle={"italic"}>
           by malzi.
@@ -55,6 +55,7 @@ const SlideEight = () => {
         pl={{ ph: "70px", lt: "50px" }}
         pr={{ ph: "20px", lt: "10%", dt: "16%" }}
         position={"relative"}
+        minH={{ ph: '408px', tl: '313px', dt: '562px' }}
       >
         <Icon
           as={CgQuote}
@@ -85,7 +86,7 @@ const SlideEight = () => {
             w={"64px"}
             h={"64px"}
             borderRadius={"64px"}
-            loading="lazy"
+            // loading="lazy"
           />
           <Flex flexDirection={"column"}>
             <Text color={"gray.600"} fontSize={"md"} fontStyle={"italic"}>
