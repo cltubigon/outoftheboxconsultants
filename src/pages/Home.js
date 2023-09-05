@@ -9,6 +9,9 @@ import HomeSecFour from "../Components/home/HomeSecFour"
 import HomeSecFive from "../Components/home/HomeSecFive"
 import HomeSecTwo from "../Components/home/HomeSecTwo"
 import HomeSecSix from "../Components/home/HomeSecSix"
+import HomeSecSeven from "../Components/home/HomeSecSeven"
+import HomeSecEight from "../Components/home/HomeSecEight"
+import HomeSecNine from "../Components/home/HomeSecNine"
 
 function Home() {
   return (
@@ -20,6 +23,9 @@ function Home() {
         <HomeSecFour />
         <HomeSecFive />
         <HomeSecSix />
+        <HomeSecSeven />
+        <HomeSecEight />
+        <HomeSecNine />
       </Flex>
     </Flex>
   )
