@@ -11,8 +11,6 @@ const HomeSecEight = () => {
       mb={"56px"}
       mt={"45px"}
       flexDirection={'column'}
-      minW={'360px'}
-      mx={'auto'}
     >
       <Flex
         w={"100%"}

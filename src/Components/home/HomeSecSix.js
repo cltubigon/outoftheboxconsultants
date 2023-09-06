@@ -20,7 +20,6 @@ import { MdStar, MdStarHalf } from "react-icons/md"
 import { Link } from "react-router-dom"
 
 const HomeSecSix = () => {
-  console.log("HomeSecSix")
   const dispatch = useDispatch()
   const containerRef = useRef(null)
   const activeSlideTwo = useSelector((state) => state.homepage.activeSlideTwo)
@@ -91,7 +90,7 @@ const HomeSecSix = () => {
   }
 
   return (
-    <Flex w={"100%"} flexDirection={"column"} pb={"60px"} alignItems={"center"} minW={'360px'}>
+    <Flex w={"100%"} flexDirection={"column"} pb={"60px"} alignItems={"center"}>
       <Flex
         w={"100%"}
         flexDirection={"column"}

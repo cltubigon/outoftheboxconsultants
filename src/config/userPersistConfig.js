@@ -12,7 +12,7 @@ import { persistReducer, persistStore } from "redux-persist"
 const persistConfig = {
   key: 'user',
   storage,
-  blacklist: ['firebase', 'firestore'],
+  blacklist: ['firebase', 'firestore', 'globalactions'],
 }
 
 const middleware = [thunk.withExtraArgument({ getFirebase, getFirestore })]

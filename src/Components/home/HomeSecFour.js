@@ -13,7 +13,6 @@ import { FaStar } from "react-icons/fa"
 import { Link } from "react-router-dom"
 
 const HomeSecFour = () => {
-  console.log('HomeSecFour')
   const [btnHovered, setBtnHovered] = useState(false)
   const handleMouseEnter = () => {
     setBtnHovered(() => !btnHovered)
@@ -27,8 +26,6 @@ const HomeSecFour = () => {
       pb={{ base: "49px", md: "63px" }}
       flexDirection={{ base: "column-reverse", lg: "row" }}
       maxW={"1300px"}
-      minW={'360px'}
-      mx={'auto'}
       px={{ ph: "15px", tl: "40px", lt: "50px", dt: '0px' }}
     >
       <Flex

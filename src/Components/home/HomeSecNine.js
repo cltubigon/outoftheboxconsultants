@@ -3,7 +3,7 @@ import React from "react"
 
 const HomeSecNine = () => {
   return (
-    <Flex w={"100%"} justifyContent={"center"} bgColor={"#F3F2F0"} minW={'360px'}>
+    <Flex w={"100%"} justifyContent={"center"} bgColor={"#F3F2F0"}>
       <Flex
         w={"1300px"}
         px={{ ph: "15px", tl: "40px", lt: "50px", dt: "0px" }}

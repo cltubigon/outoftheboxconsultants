@@ -16,36 +16,18 @@ import { useSelector } from "react-redux"
 import { useEffect, useRef, useState } from "react"
 
 function HomeSecOne() {
-  const secRef = useRef(null)
-  const [screenWidth, setScreenWidth] = useState(null)
-
-  console.log('secRef: ', secRef)
-  console.log('screenWidth: ', screenWidth)
-
   const activeColor = useSelector((state) => state.homepage.activeColor)
   const slideImageHeight = useSelector(
     (state) => state.homepage.slideImageHeight
   )
-
-  useEffect(() => {
-    console.log('secRef.current.offsetWidth: ', secRef.current.offsetWidth)
-    if (secRef.current) {
-      setScreenWidth(secRef.current.clientWidth)
-    }
-    console.log("screenWidth: ", screenWidth)
-  }, [secRef.current])
-
   return (
     <Flex
-      ref={secRef}
       maxW={"1300px"}
       pt={{ ph: "20px", tl: "60px" }}
       pb={{ base: "68px", md: "94px" }}
       px={{ ph: "15px", tl: "40px", lt: "50px", dt: "0px" }}
       minH={{ ph: "860px", tl: "1019px", lt: "651px", dt: "653px" }}
       bgColor={"white"}
-      // w={screenWidth}
-      // minW={{ ph: screenWidth, lt: "1024px" }}
       mx={"auto"}
       alignItems={"flex-start"}
     >
@@ -55,7 +37,7 @@ function HomeSecOne() {
           md: "column-reverse",
           lg: "row",
         }}
-        // alignItems={"flex-start"}
+        alignItems={"center"}
         w={"100%"}
       >
         <Flex

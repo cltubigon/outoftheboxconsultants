@@ -12,7 +12,6 @@ import { BsArrowRightShort } from "react-icons/bs"
 import { Link } from "react-router-dom"
 
 const HomeSecThree = () => {
-  console.log('HomeSecThree')
   const clickMeThree = {
     _before: {
       content: "''",
@@ -72,8 +71,6 @@ const HomeSecThree = () => {
       pt={{ base: "28px", md: "58px" }}
       pb={"30px"}
       px={{ ph: "15px", tl: "40px", lt: "50px", dt: '0px' }}
-      mx={'auto'}
-      minW={'360px'}
     >
       <Flex
         flexDirection={"column"}

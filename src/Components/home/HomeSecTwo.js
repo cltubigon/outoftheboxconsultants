@@ -4,7 +4,6 @@ import { BsArrowRightShort } from "react-icons/bs"
 import { Link } from "react-router-dom"
 
 const HomeSecTwo = () => {
-  console.log("HomeSecTwo")
   const featuredList = [
     {
       imageURL: "/images/Homepage/logo-identity.webp",
@@ -51,7 +50,6 @@ const HomeSecTwo = () => {
       justifyContent={"center"}
       pt={{ base: "28px", md: "60px" }}
       pb={{ base: "75px", md: "50px" }}
-      minW={'360px'}
     >
       <Flex
         flexDirection={"column"}

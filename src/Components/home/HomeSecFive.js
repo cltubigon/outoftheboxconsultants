@@ -4,7 +4,6 @@ import { BsArrowRightShort } from "react-icons/bs"
 import { Link } from "react-router-dom"
 
 const HomeSecFive = () => {
-  console.log('HomeSecFive')
   const featuredList = [
     {
       imageURL: "/images/Homepage/business-card-design-b10a8518d4.webp",
@@ -45,12 +44,11 @@ const HomeSecFive = () => {
     setBtnHovered(() => !btnHovered)
   }
   return (
-    <Flex bgColor={"#F3F2F0"} w={"100%"} py={"60px"} minW={'360px'}>
+    <Flex bgColor={"#F3F2F0"} w={"100%"} py={"60px"} justifyContent={'center'} >
       <Flex
         flexDirection={"column"}
         gap={6}
         w={"100%"}
-        mx={"auto"}
         maxW={"1300px"}
         px={{ ph: "15px", tl: "40px", lt: "50px", dt: '0px' }}
       >
@@ -60,7 +58,12 @@ const HomeSecFive = () => {
           justifyContent={"space-between"}
           w={"100%"}
         >
-          <Flex flexDirection={"column"} gap={2} pl={{ base: 0, md: "30px" }} w={{ ph: '100%', lt: '70%' }}>
+          <Flex
+            flexDirection={"column"}
+            gap={2}
+            pl={{ base: 0, md: "30px" }}
+            w={{ ph: "100%", lt: "70%" }}
+          >
             <Text
               borderRadius={"20px"}
               bgColor={"#E88954"}
@@ -119,10 +122,10 @@ const HomeSecFive = () => {
           <Flex
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
-            display={{ ph: 'none', lt: 'flex' }}
+            display={{ ph: "none", lt: "flex" }}
             ml={"28px"}
-            alignSelf={'flex-end'}
-            mb={'10px'}
+            alignSelf={"flex-end"}
+            mb={"10px"}
             borderBottom={
               btnHovered ? "2px solid #ccc" : "2px solid transparent"
             }
@@ -131,7 +134,7 @@ const HomeSecFive = () => {
           >
             <Link to={"/"}>
               <Flex>
-                <Text fontSize={{ ph: 'lg', dt: 'xl' }} fontWeight={"semibold"}>
+                <Text fontSize={{ ph: "lg", dt: "xl" }} fontWeight={"semibold"}>
                   View all design categories
                 </Text>
                 <Icon as={BsArrowRightShort} boxSize={8} />

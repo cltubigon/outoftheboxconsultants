@@ -1,29 +1,25 @@
 import { Flex, Icon, Image, Text } from "@chakra-ui/react"
-import React, { useEffect } from "react"
-import { BsLightningFill, BsListUl } from "react-icons/bs"
-import { FaLightbulb, FaPhoneAlt } from "react-icons/fa"
-import { TbUserSearch } from "react-icons/tb"
+import React, { useEffect, useState } from "react"
+import { FaPhoneAlt } from "react-icons/fa"
 import { GiHamburgerMenu } from "react-icons/gi"
 import { Link } from "react-router-dom"
-import { useDispatch, useSelector } from "react-redux"
+import { useDispatch } from "react-redux"
 import { SET_SHOW_MOBILE_MENU } from "../../store/actions/globalActions"
 
 const MainNav = () => {
   const dispatch = useDispatch()
-  const mobileMenuShow = useSelector(
-    (state) => state.globalactions.mobileMenuShow
-  )
-
-  useEffect(() => {
-    dispatch(SET_SHOW_MOBILE_MENU(false))
-  }, [])
+  const [mobileNav, setMobileNav] = useState(false)
 
   const handleMenuClick = () => {
-    dispatch(SET_SHOW_MOBILE_MENU(!mobileMenuShow))
+    setMobileNav(() => !mobileNav)
   }
 
+  useEffect(() => {
+    dispatch(SET_SHOW_MOBILE_MENU(mobileNav))
+  }, [mobileNav])
+
   return (
-    <Flex w={"100%"} py={"20px"} minH={'80px'}>
+    <Flex w={"100%"} py={"20px"} minH={"80px"} bgColor={"#fff"}>
       {/*------------------ Mobile Only ------------------*/}
       <Flex
         w={"100%"}
@@ -31,7 +27,6 @@ const MainNav = () => {
         justifyContent={"space-between"}
         alignItems={"center"}
         px={{ ph: "15px", tl: "40px", lt: "50px", dt: "0px" }}
-        bgColor={"#fff"}
         minW={"320px"}
       >
         <Icon
@@ -72,7 +67,7 @@ const MainNav = () => {
             alignItems={"center"}
             gap={{ ph: "unset", lt: "40px", dt: "55px" }}
           >
-            <Flex minW={'120px'}>
+            <Flex minW={"120px"}>
               <Image
                 src="/images/Homepage/mainLogo.svg"
                 maxW={"120px"}
