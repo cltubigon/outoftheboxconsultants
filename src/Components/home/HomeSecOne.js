@@ -23,7 +23,7 @@ function HomeSecOne() {
   return (
     <Flex
       maxW={"1300px"}
-      pt={{ ph: "20px", tl: "60px" }}
+      pt={{ ph: "20px", tl: "54px" }}
       pb={{ base: "68px", md: "94px" }}
       px={{ ph: "15px", tl: "40px", lt: "50px", dt: "0px" }}
       minH={{ ph: "860px", tl: "1019px", lt: "651px", dt: "653px" }}

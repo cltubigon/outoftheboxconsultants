@@ -117,7 +117,13 @@ const SliderOne = () => {
     },
   }
   return (
-    <Flex p={"1px"} position={"relative"} flexDirection={"column"}>
+    <Flex
+      p={"1px"}
+      position={"relative"}
+      flexDirection={"column"}
+      minW={{ ph: "369px", tl: "598px", lt: "589px", dt: "598px" }}
+      minH={{ ph: "311px", tl: "501px", lt: "494px", dt: "501px" }}
+    >
       {activeSlide === 1 && (
         <Flex
           as={motion.div}
