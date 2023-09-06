@@ -27,7 +27,9 @@ const HomeSecFour = () => {
       pb={{ base: "49px", md: "63px" }}
       flexDirection={{ base: "column-reverse", lg: "row" }}
       maxW={"1300px"}
-      px={{ ph: "10px", tl: "40px", lt: "50px", dt: '0px' }}
+      minW={'360px'}
+      mx={'auto'}
+      px={{ ph: "15px", tl: "40px", lt: "50px", dt: '0px' }}
     >
       <Flex
         w={{ base: "100%", lg: "50%" }}

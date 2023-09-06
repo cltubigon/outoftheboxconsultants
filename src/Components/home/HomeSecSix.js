@@ -91,7 +91,7 @@ const HomeSecSix = () => {
   }
 
   return (
-    <Flex w={"100%"} flexDirection={"column"} pb={"60px"} alignItems={"center"}>
+    <Flex w={"100%"} flexDirection={"column"} pb={"60px"} alignItems={"center"} minW={'360px'}>
       <Flex
         w={"100%"}
         flexDirection={"column"}
@@ -108,7 +108,7 @@ const HomeSecSix = () => {
         <ArrowControl />
         <Flex
           maxW={"1300px"}
-          px={{ ph: "10px", tl: "40px", lt: "50px", dt: "0px" }}
+          px={{ ph: "15px", tl: "40px", lt: "50px", dt: "0px" }}
           flexDirection={"column"}
           alignItems={"center"}
           gap={4}
@@ -131,6 +131,7 @@ const HomeSecSix = () => {
       <Flex
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
+        zIndex={15}
         mt={"-25px"}
         alignItems={"center"}
         borderBottom={btnHovered ? "2px solid #ccc" : "2px solid transparent"}
@@ -153,7 +154,7 @@ const HomeSecSix = () => {
         <Icon as={MdStar} boxSize={9} />
         <Icon as={MdStarHalf} boxSize={9} />
       </Flex>
-      <Flex mt={5}>
+      <Flex mt={5} px={4}>
         <Text textAlign={"center"}>
           Folks think we're pretty rad. We're rated 4.8/5 from 37,551 customer
           reviews.

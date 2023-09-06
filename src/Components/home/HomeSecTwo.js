@@ -51,13 +51,14 @@ const HomeSecTwo = () => {
       justifyContent={"center"}
       pt={{ base: "28px", md: "60px" }}
       pb={{ base: "75px", md: "50px" }}
+      minW={'360px'}
     >
       <Flex
         flexDirection={"column"}
         gap={6}
         maxW={"1300px"}
         w={"100%"}
-        px={{ ph: "10px", tl: "40px", lt: "50px", dt: "0px" }}
+        px={{ ph: "15px", tl: "40px", lt: "50px", dt: "0px" }}
       >
         <Flex alignItems={"center"} justifyContent={"space-between"} w={"100%"}>
           <Flex>

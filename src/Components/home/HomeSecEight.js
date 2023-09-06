@@ -7,10 +7,12 @@ const HomeSecEight = () => {
     <Flex
       maxW={"1300px"}
       w={'100%'}
-        px={{ ph: "10px", tl: "40px", lt: "50px", dt: "0px" }}
+        px={{ ph: "15px", tl: "40px", lt: "50px", dt: "0px" }}
       mb={"56px"}
       mt={"45px"}
       flexDirection={'column'}
+      minW={'360px'}
+      mx={'auto'}
     >
       <Flex
         w={"100%"}

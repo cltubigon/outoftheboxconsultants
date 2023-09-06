@@ -8,11 +8,11 @@ function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
-          <Routes>
-            <Route exact path="/" element={<Home />}></Route>
-          </Routes>
-          <Footer />
-      </BrowserRouter>
+      <Routes>
+        <Route exact path="/" element={<Home />}></Route>
+      </Routes>
+      <Footer />
+    </BrowserRouter>
   )
 }
 

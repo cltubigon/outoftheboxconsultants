@@ -2,7 +2,6 @@ import { Flex, Icon, Text } from "@chakra-ui/react"
 import React from "react"
 import {
   BsFacebook,
-  BsGlobe,
   BsGlobeAmericas,
   BsInstagram,
   BsLinkedin,
@@ -23,7 +22,7 @@ const Footer = () => {
       <Flex
         w={"100%"}
         maxW={"1300px"}
-        px={{ ph: "10px", tl: "40px", lt: "50px", dt: "0px" }}
+        px={{ ph: "15px", tl: "40px", lt: "50px", dt: "0px" }}
         py={"60px"}
         display={{ ph: "none", lt: "flex" }}
       >
@@ -83,7 +82,7 @@ const Footer = () => {
         display={{ ph: "none", lt: "flex" }}
         w={"100%"}
         maxW={"1300px"}
-        px={{ ph: "10px", tl: "40px", lt: "50px", dt: "0px" }}
+        px={{ ph: "15px", tl: "40px", lt: "50px", dt: "0px" }}
         justifyContent={"space-between"}
         borderTop={"2px solid #dad9d7"}
         py={"30px"}
@@ -139,7 +138,7 @@ const Footer = () => {
         display={{ ph: "flex", lt: "none" }}
         w={"100%"}
         maxW={"1300px"}
-        px={{ ph: "10px", tl: "40px", lt: "50px", dt: "0px" }}
+        px={{ ph: "15px", tl: "40px", lt: "50px", dt: "0px" }}
         py={"40px"}
         flexDirection={"column"}
         alignItems={"center"}

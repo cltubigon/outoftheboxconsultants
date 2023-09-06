@@ -33,8 +33,10 @@ const HomeSecSeven = () => {
       maxW={"1300px"}
       flexDirection={{ base: "column", lg: "row" }}
       pb={{ ph: "10px", lt: "30px" }}
-      px={{ ph: "10px", tl: "122px", lt: "50px", dt: "0px" }}
+      px={{ ph: "15px", tl: "122px", lt: "50px", dt: "0px" }}
       borderTop={"1px solid #DAD9D7"}
+      minW={'360px'}
+      mx={'auto'}
     >
       <Flex
         flexDirection={"column"}

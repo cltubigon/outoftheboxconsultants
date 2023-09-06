@@ -1,6 +1,9 @@
 import { Flex, Image, Text } from "@chakra-ui/react"
 import React, { useEffect, useRef, useState } from "react"
-import { SET_ACTIVE_SLIDE, SET_SLIDE_IMAGE_HEIGHT } from "../../store/actions/homepageActions"
+import {
+  SET_ACTIVE_SLIDE,
+  SET_SLIDE_IMAGE_HEIGHT,
+} from "../../store/actions/homepageActions"
 import { useDispatch, useSelector } from "react-redux"
 import { Link } from "react-router-dom"
 import { motion } from "framer-motion"
@@ -74,15 +77,12 @@ const SliderOne = () => {
   }
 
   const [showIt, setShowIt] = useState(false)
-  useEffect(()=> {
-    
-  }, [])
+  useEffect(() => {}, [])
 
   useEffect(() => {
-
-    const showTimeOut = setTimeout(()=> {
+    const showTimeOut = setTimeout(() => {
       setShowIt(true)
-    }, 1500)
+    }, 1000)
 
     dispatch(SET_ACTIVE_SLIDE(1))
 
@@ -127,48 +127,53 @@ const SliderOne = () => {
           position={"absolute"}
           zIndex={10}
         >
-          <Image ref={imageRef} src={"images/Homepage/vegan-jerky.jpg"} loading="eager" />
-          <Flex>
+          <Image
+            ref={imageRef}
+            src={"images/Homepage/vegan-jerky.jpg"}
+            loading="eager"
+          />
+          {showIt && (
             <Flex
               as={motion.div}
               variants={slideAnimation}
               initial={"initial"}
               animate={"fading"}
-              display={!showIt && 'none'}
             >
-              <Text
-                position={"absolute"}
-                bottom={{ base: "0", md: "15px" }}
-                right={"30px"}
-                fontStyle={"italic"}
-                fontSize={"sm"}
-              >
-                Created for Vegan Jerky Co
-              </Text>
-            </Flex>
-            <Link to={"/"}>
-              <Flex
-                sx={clickMe}
-                p={"4px 12px 4px 4px"}
-                bgColor={"#FE5F50"}
-                gap={2}
-                borderRadius={"50px"}
-                maxW={"205px"}
-                alignItems={"center"}
-                position={"absolute"}
-                bottom={"130px"}
-                right="95px"
-              >
-                <Image
-                  src="/images/Homepage/avatar-mjvass.webp"
-                  borderRadius={"50px"}
-                  w={"32px"}
-                  h={"32px"}
-                />
-                <Text color={"#fff"}>Packaging by Mj.vass</Text>
+              <Flex>
+                <Text
+                  position={"absolute"}
+                  bottom={{ base: "0", md: "15px" }}
+                  right={"30px"}
+                  fontStyle={"italic"}
+                  fontSize={"sm"}
+                >
+                  Created for Vegan Jerky Co
+                </Text>
               </Flex>
-            </Link>
-          </Flex>
+              <Link to={"/"}>
+                <Flex
+                  sx={clickMe}
+                  p={"4px 12px 4px 4px"}
+                  bgColor={"#FE5F50"}
+                  gap={2}
+                  borderRadius={"50px"}
+                  maxW={"205px"}
+                  alignItems={"center"}
+                  position={"absolute"}
+                  bottom={"130px"}
+                  right="95px"
+                >
+                  <Image
+                    src="/images/Homepage/avatar-mjvass.webp"
+                    borderRadius={"50px"}
+                    w={"32px"}
+                    h={"32px"}
+                  />
+                  <Text color={"#fff"}>Packaging by Mj.vass</Text>
+                </Flex>
+              </Link>
+            </Flex>
+          )}
         </Flex>
       )}
 
@@ -182,46 +187,48 @@ const SliderOne = () => {
           zIndex={10}
         >
           <Image ref={imageRef} src={"images/Homepage/little-danube.jpg"} />
-          <Flex>
+          {showIt && (
             <Flex
               as={motion.div}
               variants={slideAnimation}
               initial={"initial"}
               animate={"fading"}
             >
-              <Text
-                position={"absolute"}
-                bottom={{ base: "0", md: "15px" }}
-                right={"30px"}
-                fontStyle={"italic"}
-                fontSize={"sm"}
-              >
-                Created for Little Danube
-              </Text>
-            </Flex>
-            <Link to={"/"}>
-              <Flex
-                sx={clickMeTwo}
-                p={"4px 12px 4px 4px"}
-                bgColor={activeColor}
-                gap={2}
-                borderRadius={"50px"}
-                alignItems={"center"}
-                position={"absolute"}
-                top={"50px"}
-                right={{ base: "80px", lg: "145px" }}
-                minW={"270px"}
-              >
-                <Image
-                  src="/images/Homepage/profile-image-kamilla-oblakova.webp"
-                  borderRadius={"50px"}
-                  w={"32px"}
-                  h={"32px"}
-                />
-                <Text color={"#fff"}>Branding by Kamilla Oblakova</Text>
+              <Flex>
+                <Text
+                  position={"absolute"}
+                  bottom={{ base: "0", md: "15px" }}
+                  right={"30px"}
+                  fontStyle={"italic"}
+                  fontSize={"sm"}
+                >
+                  Created for Little Danube
+                </Text>
               </Flex>
-            </Link>
-          </Flex>
+              <Link to={"/"}>
+                <Flex
+                  sx={clickMeTwo}
+                  p={"4px 12px 4px 4px"}
+                  bgColor={activeColor}
+                  gap={2}
+                  borderRadius={"50px"}
+                  alignItems={"center"}
+                  position={"absolute"}
+                  top={"50px"}
+                  right={{ base: "80px", lg: "145px" }}
+                  minW={"270px"}
+                >
+                  <Image
+                    src="/images/Homepage/profile-image-kamilla-oblakova.webp"
+                    borderRadius={"50px"}
+                    w={"32px"}
+                    h={"32px"}
+                  />
+                  <Text color={"#fff"}>Branding by Kamilla Oblakova</Text>
+                </Flex>
+              </Link>
+            </Flex>
+          )}
         </Flex>
       )}
       {activeSlide === 3 && (
@@ -234,45 +241,47 @@ const SliderOne = () => {
           zIndex={10}
         >
           <Image ref={imageRef} src={"images/Homepage/feel-good.jpg"} />
-          <Flex>
+          {showIt && (
             <Flex
               as={motion.div}
               variants={slideAnimation}
               initial={"initial"}
               animate={"fading"}
             >
-              <Text
-                position={"absolute"}
-                bottom={{ base: "0", md: "15px" }}
-                right={"30px"}
-                fontStyle={"italic"}
-                fontSize={"sm"}
-              >
-                Created for Feel Good Tea Co.
-              </Text>
-            </Flex>
-            <Link to={"/"}>
-              <Flex
-                sx={clickMeThree}
-                p={"4px 12px 4px 4px"}
-                bgColor={"#F9F57B"}
-                gap={2}
-                borderRadius={"50px"}
-                alignItems={"center"}
-                position={"absolute"}
-                bottom={"130px"}
-                right={{ base: 0, lg: "-28px" }}
-              >
-                <Image
-                  src="/images/Homepage/avatar-raveart.webp"
-                  borderRadius={"50px"}
-                  w={"32px"}
-                  h={"32px"}
-                />
-                <Text>Brand Identity by Raveart</Text>
+              <Flex>
+                <Text
+                  position={"absolute"}
+                  bottom={{ base: "0", md: "15px" }}
+                  right={"30px"}
+                  fontStyle={"italic"}
+                  fontSize={"sm"}
+                >
+                  Created for Feel Good Tea Co.
+                </Text>
               </Flex>
-            </Link>
-          </Flex>
+              <Link to={"/"}>
+                <Flex
+                  sx={clickMeThree}
+                  p={"4px 12px 4px 4px"}
+                  bgColor={"#F9F57B"}
+                  gap={2}
+                  borderRadius={"50px"}
+                  alignItems={"center"}
+                  position={"absolute"}
+                  bottom={"130px"}
+                  right={{ base: 0, lg: "-28px" }}
+                >
+                  <Image
+                    src="/images/Homepage/avatar-raveart.webp"
+                    borderRadius={"50px"}
+                    w={"32px"}
+                    h={"32px"}
+                  />
+                  <Text>Brand Identity by Raveart</Text>
+                </Flex>
+              </Link>
+            </Flex>
+          )}
         </Flex>
       )}
       {activeSlide === 4 && (
@@ -285,45 +294,52 @@ const SliderOne = () => {
           zIndex={10}
         >
           <Image ref={imageRef} src={"images/Homepage/the-studio.jpg"} />
-          <Flex>
+          {showIt && (
             <Flex
               as={motion.div}
               variants={slideAnimation}
               initial={"initial"}
               animate={"fading"}
             >
-              <Text
-                position={"absolute"}
-                bottom={{ base: "0", md: "15px" }}
-                right={"30px"}
-                fontStyle={"italic"}
-                fontSize={"sm"}
-              >
-                Created for The Studio Chicago
-              </Text>
-            </Flex>
-            <Link to={"/"}>
               <Flex
-                sx={clickMeFour}
-                p={"4px 12px 4px 4px"}
-                bgColor={activeColor}
-                gap={2}
-                borderRadius={"50px"}
-                alignItems={"center"}
-                position={"absolute"}
-                bottom={"130px"}
-                right="calc(50% - 134px)"
+                as={motion.div}
+                variants={slideAnimation}
+                initial={"initial"}
+                animate={"fading"}
               >
-                <Image
-                  src="/images/Homepage/avatar-illusive-trust.webp"
-                  borderRadius={"50px"}
-                  w={"32px"}
-                  h={"32px"}
-                />
-                <Text color={"#fff"}>Merchandise by illusive trust</Text>
+                <Text
+                  position={"absolute"}
+                  bottom={{ base: "0", md: "15px" }}
+                  right={"30px"}
+                  fontStyle={"italic"}
+                  fontSize={"sm"}
+                >
+                  Created for The Studio Chicago
+                </Text>
               </Flex>
-            </Link>
-          </Flex>
+              <Link to={"/"}>
+                <Flex
+                  sx={clickMeFour}
+                  p={"4px 12px 4px 4px"}
+                  bgColor={activeColor}
+                  gap={2}
+                  borderRadius={"50px"}
+                  alignItems={"center"}
+                  position={"absolute"}
+                  bottom={"130px"}
+                  right="calc(50% - 134px)"
+                >
+                  <Image
+                    src="/images/Homepage/avatar-illusive-trust.webp"
+                    borderRadius={"50px"}
+                    w={"32px"}
+                    h={"32px"}
+                  />
+                  <Text color={"#fff"}>Merchandise by illusive trust</Text>
+                </Flex>
+              </Link>
+            </Flex>
+          )}
         </Flex>
       )}
 

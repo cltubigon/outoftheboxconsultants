@@ -1,6 +1,7 @@
 import { Box, Flex, Heading, Icon, Image, Text } from "@chakra-ui/react"
 import React, { useState } from "react"
 import { BsArrowRightShort } from "react-icons/bs"
+import { Link } from "react-router-dom"
 
 const HomeSecFive = () => {
   console.log('HomeSecFive')
@@ -28,21 +29,30 @@ const HomeSecFive = () => {
   ]
 
   const [isHovered, setIsHovered] = useState(null)
+  const [btnHovered, setBtnHovered] = useState(false)
+
   const handleHover = (index) => {
     setIsHovered(index)
   }
   const handleHoverLeave = () => {
     setIsHovered(null)
   }
+
+  const handleMouseEnter = () => {
+    setBtnHovered(() => !btnHovered)
+  }
+  const handleMouseLeave = () => {
+    setBtnHovered(() => !btnHovered)
+  }
   return (
-    <Flex bgColor={"#F3F2F0"} w={"100%"} py={"60px"}>
+    <Flex bgColor={"#F3F2F0"} w={"100%"} py={"60px"} minW={'360px'}>
       <Flex
         flexDirection={"column"}
         gap={6}
         w={"100%"}
         mx={"auto"}
         maxW={"1300px"}
-        px={{ ph: "10px", tl: "40px", lt: "50px", dt: '0px' }}
+        px={{ ph: "15px", tl: "40px", lt: "50px", dt: '0px' }}
       >
         <Flex
           alignItems={"center"}
@@ -50,7 +60,7 @@ const HomeSecFive = () => {
           justifyContent={"space-between"}
           w={"100%"}
         >
-          <Flex flexDirection={"column"} gap={2} pl={{ base: 0, md: "30px" }}>
+          <Flex flexDirection={"column"} gap={2} pl={{ base: 0, md: "30px" }} w={{ ph: '100%', lt: '70%' }}>
             <Text
               borderRadius={"20px"}
               bgColor={"#E88954"}
@@ -107,15 +117,26 @@ const HomeSecFive = () => {
             </Text>
           </Flex>
           <Flex
-            alignItems={"flex-end"}
-            justifyContent={"flex-end"}
-            display={{ base: "none", lg: "flex" }}
-            minW={"345px"}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+            display={{ ph: 'none', lt: 'flex' }}
+            ml={"28px"}
+            alignSelf={'flex-end'}
+            mb={'10px'}
+            borderBottom={
+              btnHovered ? "2px solid #ccc" : "2px solid transparent"
+            }
+            w={"fit-content"}
+            transition={"all 0.3s"}
           >
-            <Text fontSize={"xl"} fontWeight={"semibold"}>
-              View all design categories
-            </Text>
-            <Icon as={BsArrowRightShort} boxSize={8} />
+            <Link to={"/"}>
+              <Flex>
+                <Text fontSize={{ ph: 'lg', dt: 'xl' }} fontWeight={"semibold"}>
+                  View all design categories
+                </Text>
+                <Icon as={BsArrowRightShort} boxSize={8} />
+              </Flex>
+            </Link>
           </Flex>
         </Flex>
 

@@ -71,7 +71,9 @@ const HomeSecThree = () => {
       flexDirection={{ base: "column", lg: "row" }}
       pt={{ base: "28px", md: "58px" }}
       pb={"30px"}
-      px={{ ph: "10px", tl: "40px", lt: "50px", dt: '0px' }}
+      px={{ ph: "15px", tl: "40px", lt: "50px", dt: '0px' }}
+      mx={'auto'}
+      minW={'360px'}
     >
       <Flex
         flexDirection={"column"}
@@ -148,13 +150,13 @@ const HomeSecThree = () => {
           <Flex
             sx={clickMeTwo}
             p={"4px 12px 4px 4px"}
-            bgColor={"#51AFF4"}
             gap={2}
             borderRadius={"50px"}
             alignItems={"center"}
             position={"absolute"}
-            top={"50%"}
             left={{ base: "-25%", md: "0" }}
+            top={"50%"}
+            bgColor={"#51AFF4"}
           >
             <Image
               src="/images/Homepage/avatar-setupshop.webp"
